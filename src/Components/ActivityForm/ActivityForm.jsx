@@ -3,7 +3,7 @@ import './ActivityForm.css'
 
 const ActivityForm = () => {
   return (
-    <section>
+    <main>
       <h2>Skapa aktivitet</h2>
       <div id='activity-form'>
         <div className='activity-input'>
@@ -17,8 +17,7 @@ const ActivityForm = () => {
         </div>
         <button>Lägg till</button>
       </div>
-      
-    </section>
+    </main>
   )
 }
 
