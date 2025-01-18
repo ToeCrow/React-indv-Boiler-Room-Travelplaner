@@ -1,0 +1,11 @@
+article, #activity-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.activity-input, .activity-output {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
