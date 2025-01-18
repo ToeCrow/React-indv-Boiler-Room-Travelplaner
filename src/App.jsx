@@ -3,6 +3,7 @@ import './index.css';
 import ActivityForm from './Components/ActivityForm/ActivityForm';
 import ActivityList from './Components/ActivityList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import EditActivity from './Components/EditActivity/EditActivity ';
 
 function App() {
   return (

@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  background-color: #3BBFFB;
+  background-color: #0079B4;
   padding: 50px 50px 0 50px;
   display: flex;
   flex-direction: row;
@@ -51,7 +51,7 @@ main {
 } 
 
 main h2 {
-  color: #3BBFFB;
+  color: #0079B4;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -78,6 +78,6 @@ main ul li {
 }
 
 main ul li strong {
-  color: #3BBFFB;
+  color: #0079B4;
   font-size: 16px;
 }
