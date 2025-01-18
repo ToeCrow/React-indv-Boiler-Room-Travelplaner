@@ -1,10 +1,10 @@
 {
   "activities": [
     {
-      "id": "1",
-      "activity": "Hiking",
-      "date": "2025-03-15",
-      "place": "Rocky Mountain National Park"
+      "activity": "Hiking2",
+      "date": "2025-03-20",
+      "place": "Rocky Mountain National Park",
+      "id": "1"
     },
     {
       "id": "2",
@@ -29,18 +29,6 @@
       "activity": "Marathon",
       "date": "2025-07-01",
       "place": "Boston, Massachusetts"
-    },
-    {
-      "id": "02ce",
-      "activity": "testar",
-      "date": "20240118",
-      "place": "Hemma"
-    },
-    {
-      "id": "b478",
-      "activity": "Spela handboll",
-      "date": "Alltid",
-      "place": "Var som helst"
     }
   ]
 }

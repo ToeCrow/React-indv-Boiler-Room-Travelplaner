@@ -41,6 +41,7 @@ const ActivityForm = () => {
         <input 
         type="text" 
         required 
+        autoFocus 
         value={activity}
         onChange = {(e) => setActivity(e.target.value)}
         />
@@ -58,6 +59,7 @@ const ActivityForm = () => {
          />
         {!loading && <button type="submit">Skapa</button>}
         {loading && <button disabled type="submit">Lägger till</button>}
+        <button type="button" onClick={() => navigate('/')}>Avbryt</button>
       </form>
     </main>
   )

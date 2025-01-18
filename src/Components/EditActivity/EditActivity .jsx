@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../useFetch";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import ErrorScreen from "../ErrorScreen/ErrorScreen";
+import { useNavigate } from "react-router-dom";
 
 const EditActivity = () => {
   const { id } = useParams();
@@ -12,6 +13,7 @@ const EditActivity = () => {
     date: '',
     place: ''
   });
+  const navigate = useNavigate();
 
   // Fyller i formuläret med data när aktiviteten är laddad
   React.useEffect(() => {
@@ -46,6 +48,7 @@ const EditActivity = () => {
           throw new Error('Failed to update activity');
         }
         alert('Activity updated successfully!');
+        navigate('/');
       })
       .catch(error => {
         console.error('Error:', error);
