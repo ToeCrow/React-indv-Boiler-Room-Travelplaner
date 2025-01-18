@@ -1,45 +1,49 @@
-import React from 'react'
-import ActivityItem from './ActivityItem'
-import { useState } from 'react'
-import { useEffect } from 'react';
-
-
+import React, { useState, useEffect } from 'react';
+import ActivityItem from './ActivityItem';
+import LoadingScreen from './LoadingScreen/LoadingScreen';
+import ErrorScreen from './ErrorScreen/ErrorScreen';
+import useFetch from '../useFetch';
 
 const ActivityList = () => {
-  
-const [activities, setActivities] = useState(null);
-const [loading, setLoading] = useState(true);
+  const [activities, setActivities] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
+  // const [statusCode, setStatusCode] = useState(null);
+  const { data: activities, loading, error, statusCode } = useFetch('http://localhost:3001/activities');
 
   const handleDelete = (id) => {
     const updatedActivities = activities.filter(activity => activity.id !== id);
     setActivities(updatedActivities);
   };
 
-  useEffect(() => {
-    fetch('http://localhost:3001/activities')
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        setActivities(data);
-        setLoading(false); // Sätt loading till false när data har hämtats
-      });
-  }, []);
-
-  if (loading) {
-    return <p>Laddar aktiviteter...</p>; // Visa laddningsindikator
-  }
-
-  if (!activities) {
-    return <p>Inga aktiviteter hittades.</p>;
-  }
+  // useEffect(() => {
+  //   fetch('http://localhost:3001/activities')
+  //     .then(response => {
+  //       setStatusCode(response.status); // Sätt statuskod
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       return response.json();
+  //     })
+  //     .then(data => {
+  //       setActivities(data);
+  //       setLoading(false);
+  //       setError(null);
+  //     })
+  //     .catch(error => {
+  //       setError('Error fetching activities: ' + error.message);
+  //       setLoading(false);
+  //     });
+  // }, []);
 
   return (
     <section>
       <h2>Dina planerade aktiviteter</h2>
-      <ActivityItem activities={activities} handleDelete={handleDelete}/>
+      {error && <ErrorScreen statusCode={statusCode} message={error} />}
+      {loading && <LoadingScreen />}
+      {activities && <ActivityItem activities={activities} handleDelete={handleDelete} />}
     </section>
-  )
-}
+  );
+};
 
-export default ActivityList
+export default ActivityList;
