@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ActivityList />} />
         <Route path="/add-activity" element={<ActivityForm />} />
+        <Route path="/edit-activity/:id" element={<EditActivity />} />
       </Routes>
     </BrowserRouter>
   );
