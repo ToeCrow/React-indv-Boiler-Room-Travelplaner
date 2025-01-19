@@ -1,7 +1,7 @@
-import Header from './Components/Header';
+import Header from './Components/Header/Header';
 import './index.css';
 import ActivityForm from './Components/ActivityForm/ActivityForm';
-import ActivityList from './Components/ActivityList';
+import ActivityList from './Components/ActivityList/ActivityList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import EditActivity from './Components/EditActivity/EditActivity ';
 

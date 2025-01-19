@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ActivityItem from './ActivityItem';
-import LoadingScreen from './LoadingScreen/LoadingScreen';
-import ErrorScreen from './ErrorScreen/ErrorScreen';
-import useFetch from '../useFetch';
+import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import ErrorScreen from '../ErrorScreen/ErrorScreen';
+import useFetch from '../../useFetch';
 
 const ActivityList = () => {
   const { data: activities, loading, error, statusCode } = useFetch('http://localhost:3001/activities');
