@@ -4,10 +4,12 @@ import LoadingScreen from '../../Components/LoadingScreen/LoadingScreen';
 import ErrorScreen from '../../Components/ErrorScreen/ErrorScreen';
 import useFetch from '../../Components/useFetch';
 
+// Get props from useFetch
 const ActivityList = () => {
   const { data: activities, loading, error, statusCode } = useFetch('http://localhost:3001/activities');
   const [updatedActivities, setUpdatedActivities] = useState([]);
 
+  // Update activities when activities change
   useEffect(() => {
     if (activities) {
       setUpdatedActivities(activities);

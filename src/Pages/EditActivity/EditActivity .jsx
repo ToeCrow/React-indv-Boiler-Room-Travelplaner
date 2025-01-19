@@ -5,6 +5,7 @@ import LoadingScreen from "../../Components/LoadingScreen/LoadingScreen";
 import ErrorScreen from "../../Components/ErrorScreen/ErrorScreen";
 import { useNavigate } from "react-router-dom";
 
+// Gets the data from api and sets the url to edit the activity with the id
 const EditActivity = () => {
   const { id } = useParams();
   const { data: activity, error, loading } = useFetch(`http://localhost:3001/activities/${id}`);
@@ -15,7 +16,7 @@ const EditActivity = () => {
   });
   const navigate = useNavigate();
 
-  // Fyller i formuläret med data när aktiviteten är laddad
+  // Fills the form with the data from the api
   React.useEffect(() => {
     if (activity) {
       setFormData({

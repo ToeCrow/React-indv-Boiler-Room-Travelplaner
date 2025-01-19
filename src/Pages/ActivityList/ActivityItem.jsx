@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const ActivityItem = ({ activities, setActivities }) => {
   const navigate = useNavigate();
-  const [deleteMessage, setDeleteMessage] = useState(''); // State för raderingsmeddelande
+  const [deleteMessage, setDeleteMessage] = useState(''); 
 
   const handleClickEdit = (id) => {
     navigate(`/edit-activity/${id}`);
@@ -15,15 +15,13 @@ const ActivityItem = ({ activities, setActivities }) => {
         method: 'DELETE',
       });
   
-      // Logga responsstatus och text för debugging
-      console.log('Response status:', response.status);
       const responseText = await response.text();
-      console.log('Response text:', responseText);
-  
+    
       if (!response.ok) {
         throw new Error(`Failed to delete activity: ${response.status} - ${responseText}`);
       }
-  
+
+        // To delete the activity from the list without new rendering or fetching
       setActivities(prevActivities => prevActivities.filter(activity => activity.id !== id));
       setDeleteMessage('Aktiviteten har raderats.');
       setTimeout(() => setDeleteMessage(''), 3000);

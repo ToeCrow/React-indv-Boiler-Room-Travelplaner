@@ -26,7 +26,7 @@ const ActivityForm = () => {
     .then(response => response.json())
     .then((data) => {
       console.log(data);
-      // Navigera till hemsidan efter lyckad POST
+      // Navigate to home page after successful POST
       navigate('/');
     })
     .catch(error => console.error(error))

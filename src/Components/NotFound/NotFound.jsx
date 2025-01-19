@@ -4,21 +4,21 @@ import { Link } from 'react-router-dom'
 
 const NotFound = () => {
 
-  const [timer, setTimer] = useState(10); // Starta timern på 10 sekunder
+  const [timer, setTimer] = useState(10); // Start timer at 10 seconds
   const navigate = useNavigate();
 
-  // När komponenten laddas startar timern
+  // When the compontet mounts, start the timer
   useEffect(() => {
     if (timer === 0) {
-      // När timern är 0, navigera tillbaka till hemsidan
+      // WHen the timer reaches 0, navigate to the home page
       navigate('/');
     } else {
-      // Minska timern varje sekund
+      // Reduce the timer every second
       const interval = setInterval(() => {
         setTimer(prevTimer => prevTimer - 1);
       }, 1000);
 
-      // Städa upp intervallet när komponenten unmountas eller när timern når 0
+      // Clean up the interval
       return () => clearInterval(interval);
     }
   }, [timer, navigate]);
