@@ -88,7 +88,7 @@ React-indv-Boiler-Room-Travelplaner/
 - [React](https://reactjs.org/): Ett JavaScript-bibliotek för att bygga användargränssnitt.
 - [Vite](https://vitejs.dev/): En snabb byggverktyg för modern webbutveckling.
 - [React Router](https://reactrouter.com/): Hantering av routing i React-applikationer.
--[json-server](https://json-server.dev/): local lagring som beter sig som en server, för att träna på anrop. Instält på port 3001.
+- [json-server](https://json-server.dev/): local lagring som beter sig som en server, för att träna på anrop. Instält på port 3001.
 
 
 ## Bidra
