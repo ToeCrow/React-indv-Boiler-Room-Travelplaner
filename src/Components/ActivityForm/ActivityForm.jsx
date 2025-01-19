@@ -48,12 +48,14 @@ const ActivityForm = () => {
         <label htmlFor="">Datum</label>
         <input 
         type="text"
+        required
         value={date}
         onChange = {(e) => setDate(e.target.value)}
         />
         <label htmlFor="">Plats</label>
         <input
          type="text"
+         required
          value={place}
          onChange = {(e) => setPlace(e.target.value)}
          />
