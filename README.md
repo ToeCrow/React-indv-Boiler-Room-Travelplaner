@@ -104,5 +104,5 @@ Bidrag är välkomna! För att bidra:
 
 ## Licens
 
-Detta projekt är licensierat under MIT-licensen. Se [LICENSE](LICENSE) för mer information.
+Detta projekt är licensierat under MIT-licensen. Se [LICENSE](https://github.com/aws/mit-0) för mer information.
 
