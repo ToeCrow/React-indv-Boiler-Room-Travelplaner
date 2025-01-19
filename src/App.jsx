@@ -4,6 +4,7 @@ import ActivityForm from './Components/ActivityForm/ActivityForm';
 import ActivityList from './Components/ActivityList/ActivityList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import EditActivity from './Components/EditActivity/EditActivity ';
+import NotFound from './NotFound/NotFound';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<ActivityList />} />
         <Route path="/add-activity" element={<ActivityForm />} />
         <Route path="/edit-activity/:id" element={<EditActivity />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
