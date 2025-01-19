@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import useFetch from "../../Components/useFetch";
 import LoadingScreen from "../../Components/LoadingScreen/LoadingScreen";
 import ErrorScreen from "../../Components/ErrorScreen/ErrorScreen";
-import { useNavigate } from "react-router-dom";
 
 // Gets the data from api and sets the url to edit the activity with the id
 const EditActivity = () => {
