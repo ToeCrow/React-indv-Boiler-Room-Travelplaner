@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "../../useFetch";
-import LoadingScreen from "../LoadingScreen/LoadingScreen";
-import ErrorScreen from "../ErrorScreen/ErrorScreen";
+import useFetch from "../../Components/useFetch";
+import LoadingScreen from "../../Components/LoadingScreen/LoadingScreen";
+import ErrorScreen from "../../Components/ErrorScreen/ErrorScreen";
 import { useNavigate } from "react-router-dom";
 
 const EditActivity = () => {

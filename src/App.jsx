@@ -1,10 +1,10 @@
 import Header from './Components/Header/Header';
 import './index.css';
-import ActivityForm from './Components/ActivityForm/ActivityForm';
-import ActivityList from './Components/ActivityList/ActivityList';
+import ActivityForm from './Pages/ActivityForm/ActivityForm';
+import ActivityList from './Pages/ActivityList/ActivityList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import EditActivity from './Components/EditActivity/EditActivity ';
-import NotFound from './NotFound/NotFound';
+import EditActivity from './Pages/EditActivity/EditActivity ';
+import NotFound from './Components/NotFound/NotFound';
 
 function App() {
   return (
