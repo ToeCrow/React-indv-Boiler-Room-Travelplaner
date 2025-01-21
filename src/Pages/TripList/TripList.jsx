@@ -1,11 +1,12 @@
 import React from 'react'
-import ActivityList from '../ActivityList/ActivityList'
+import TripItem from './TripItem'
+
 
 const TripList = () => {
   return (
     <main>
       <h2>Dina planerade resor</h2>
-      <ActivityList />
+      <TripItem />
     </main>
   )
 }

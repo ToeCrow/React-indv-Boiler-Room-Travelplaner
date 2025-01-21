@@ -47,7 +47,7 @@ const ActivityForm = () => {
         />
         <label htmlFor="">Datum</label>
         <input 
-        type="text"
+        type="date"
         required
         value={date}
         onChange = {(e) => setDate(e.target.value)}
@@ -59,7 +59,15 @@ const ActivityForm = () => {
          value={place}
          onChange = {(e) => setPlace(e.target.value)}
          />
-        {!loading && <button type="submit">Skapa</button>}
+        {!loading && (
+      <button 
+        type="submit" 
+        disabled={!activity || !date || !place} // Knappen är inaktiverad om något fält är tomt
+      >
+        Skapa
+      </button>
+        )}
+        
         {loading && <button disabled type="submit">Lägger till</button>}
         <button type="button" onClick={() => navigate('/')}>Avbryt</button>
       </form>
