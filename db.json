@@ -29,6 +29,18 @@
       "activity": "Marathon",
       "date": "2025-07-01",
       "place": "Boston, Massachusetts"
+    },
+    {
+      "id": "3007",
+      "activity": "first activity",
+      "date": "2025-01-27",
+      "place": "In my list"
+    },
+    {
+      "id": "ae18",
+      "activity": "Third activity",
+      "date": "2025-03-21",
+      "place": "In my list"
     }
   ]
 }

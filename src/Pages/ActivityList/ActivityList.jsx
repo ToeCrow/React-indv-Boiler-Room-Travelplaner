@@ -9,7 +9,7 @@ const ActivityList = () => {
   const { data: activities, loading, error, statusCode } = useFetch('http://localhost:3001/activities');
   const [updatedActivities, setUpdatedActivities] = useState([]);
 
-  // Update activities when activities change
+  // Update activities instantly when activities change, or we would have to fetch again
   useEffect(() => {
     if (activities) {
       setUpdatedActivities(activities);

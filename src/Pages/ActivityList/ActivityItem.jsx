@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 const ActivityItem = ({ activities, setActivities }) => {
   const navigate = useNavigate();
   const [deleteMessage, setDeleteMessage] = useState(''); 
+  const sortedActivities = activities.sort((a, b) => new Date(a.date) - new Date(b.date));
 
   const handleClickEdit = (id) => {
     navigate(`/edit-activity/${id}`);
@@ -36,9 +37,9 @@ const ActivityItem = ({ activities, setActivities }) => {
 
   return (
     <section>
-      {deleteMessage && <p>{deleteMessage}</p>} {/* Visa raderingsmeddelandet */}
+      {deleteMessage && <p>{deleteMessage}</p>} {/* Show the delete message for 3 seconds*/}
       <ul>
-        {activities.map(({ id, activity, date, place }) => (
+        {sortedActivities.map(({ id, activity, date, place }) => (
           <li key={id}>
             <strong>{activity}</strong> - {date} - {place}
             <button onClick={() => handleClickEdit(id)}>Ändra</button>
