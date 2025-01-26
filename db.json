@@ -31,10 +31,10 @@
       "place": "Boston, Massachusetts"
     },
     {
-      "id": "3007",
-      "activity": "first activity",
+      "activity": "First activity",
       "date": "2025-01-27",
-      "place": "In my list"
+      "place": "In my list",
+      "id": "3007"
     },
     {
       "id": "ae18",
