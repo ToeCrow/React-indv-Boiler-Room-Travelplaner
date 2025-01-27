@@ -33,7 +33,7 @@
     {
       "activity": "First activity",
       "date": "2025-01-27",
-      "place": "In my list",
+      "place": "kiruna",
       "id": "3007"
     },
     {
@@ -41,6 +41,12 @@
       "activity": "Third activity",
       "date": "2025-03-21",
       "place": "In my list"
+    },
+    {
+      "id": "2262",
+      "activity": "sdh§",
+      "date": "2025-11-12",
+      "place": "shrwj"
     }
   ]
 }

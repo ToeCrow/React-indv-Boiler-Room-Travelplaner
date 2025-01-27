@@ -59,18 +59,28 @@ const ActivityForm = () => {
          value={place}
          onChange = {(e) => setPlace(e.target.value)}
          />
-        {!loading && (
-      <button 
-        type="submit" 
-        disabled={!activity || !date || !place} // Knappen är inaktiverad om något fält är tomt
-      >
-        Skapa
-      </button>
-        )}
-        
-        {loading && <button disabled type="submit">Lägger till</button>}
+        <div className="button-wrapper">
+          {!loading && (
+            <>
+              <button 
+                type="submit" 
+                disabled={!activity || !date || !place}
+                className={!activity || !date || !place ? 'disabled-button' : ''}
+              >
+                Skapa
+              </button>
+              <p className="hover-message">
+                Du måste fylla i alla fält innan du kan skicka formuläret.
+              </p>
+            </>
+          )}
+          {loading && (
+            <button disabled type="submit">Lägger till</button>
+          )}
+        </div>
         <button type="button" onClick={() => navigate('/')}>Avbryt</button>
-      </form>
+       </form>
+      
     </main>
   )
 }

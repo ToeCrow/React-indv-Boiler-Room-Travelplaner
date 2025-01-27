@@ -1,0 +1,21 @@
+button.disabled-button:hover + .hover-message {
+  display: block; /* Visa meddelandet vid hover */
+}
+
+.hover-message {
+  display: none; /* Dölj meddelandet som standard */
+  color: red;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+
+form {
+  height: 250px;
+}
+
+#edit-activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
