@@ -41,7 +41,7 @@ const ActivityItem = ({ activities, setActivities }) => {
       <ul>
         {sortedActivities.map(({ id, activity, date, place }) => (
           <li key={id}>
-            <strong>{activity}</strong> - {date} - {place}
+            <strong>Aktivitet: {activity} </strong> <strong>Datum:</strong> {date}  <strong>Plats:</strong> {place}
             <button onClick={() => handleClickEdit(id)}>Ändra</button>
             <button onClick={() => handleClickDelete(id)}>Radera</button>
           </li>

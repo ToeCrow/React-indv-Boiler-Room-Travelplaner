@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importera Link från react-router-dom
+import { Link, NavLink } from 'react-router-dom'; // Importera Link från react-router-dom
 
 const Header = () => {
   return (
@@ -8,10 +8,10 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Hem</Link> {/* Länk till aktivitetslistan */}
+            <NavLink to="/">Hem</NavLink> {/* Länk till aktivitetslistan */}
           </li>
           <li>
-            <Link to="/add-activity">Lägg till aktivitet</Link> {/* Länk till aktivitetsformuläret */}
+            <NavLink to="/add-activity">Lägg till aktivitet</NavLink> {/* Länk till aktivitetsformuläret */}
           </li>
         </ul>
       </nav>

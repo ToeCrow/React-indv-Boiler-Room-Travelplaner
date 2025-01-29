@@ -42,6 +42,14 @@ header nav ul li a {
   text-decoration: none;
 }
 
+header nav ul li a.active {
+  font-weight: bold;
+  background-color: white;
+  color: #0079B4;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
 header nav ul li a:hover {
   text-decoration: underline;
 }
