@@ -40,10 +40,14 @@ const ActivityItem = ({ activities, setActivities }) => {
       {deleteMessage && <p>{deleteMessage}</p>} {/* Show the delete message for 3 seconds*/}
       <ul>
         {sortedActivities.map(({ id, activity, date, place }) => (
-          <li key={id}>
-            <strong>Aktivitet: {activity} </strong> <strong>Datum:</strong> {date}  <strong>Plats:</strong> {place}
+          <li className='activity' key={id}>
+            <div className='activity-item'><strong>Aktivitet: <br /> {activity} </strong></div>
+            <div className='activity-item'><strong>Datum:</strong> <br /> {date}  </div>
+            <div className='activity-item'><strong>Plats:</strong> <br /> {place} </div>
+            <div className='activity-item activity-buttons'>
             <button onClick={() => handleClickEdit(id)}>Ändra</button>
             <button onClick={() => handleClickDelete(id)}>Radera</button>
+            </div>
           </li>
         ))}
       </ul>

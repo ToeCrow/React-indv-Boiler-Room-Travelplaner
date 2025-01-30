@@ -26,7 +26,10 @@ const ActivityList = () => {
     <main>
       <div id="activity-header">
         <h2>Dina planerade aktiviteter</h2>
-        <button onClick={handleClickAdd} className='add-button'>+</button>
+        <div id="add-activity">
+          <button onClick={handleClickAdd} className='add-button'>+</button>
+          <p>tryck för att lägga till aktivitet</p>
+        </div>
       </div>
       {error && <ErrorScreen statusCode={statusCode} message={error} />}
       {loading && <LoadingScreen />}
