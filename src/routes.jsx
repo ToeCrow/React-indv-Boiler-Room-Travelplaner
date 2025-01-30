@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       { path: "add-trip", element: <TripForm /> },
       { path: "edit-trip/:id", element: <EditTrip /> },
       { path: "activity-list/:id", element: <ActivityList /> },
-      { path: "add-activity", element: <ActivityForm /> },
+      { path: "/trip/:id/add-activity", element: <ActivityForm /> },
       { path: "edit-activity/:id", element: <EditActivity /> },
       { path: "exotictravels", element: <ExoticTravels /> },
       { path: "about", element: <About /> },

@@ -58,18 +58,18 @@ header nav ul li a:hover {
   text-decoration: underline;
 }
 
-#activity-header {
+#activity-header, #trip-header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-#add-activity {
+#add-activity, #add-trip {
   display: flex;
   flex-direction: row;
 }
 
-#add-activity p {
+#add-activity p, #add-trip p {
   margin-right: 10px;
   align-self: center;
   color: #0079B4;
@@ -109,11 +109,11 @@ main ul {
   gap: 20px;
 }
 
-.activity-item {
+.activity-item, .trip-item {
   width: 22%;
 }
 
-.activity-item button {
+.activity-item button, .trip-item button {
   background-color: #0079B4;
   color: white;
   border: none;
@@ -125,7 +125,7 @@ main ul {
   justify-self: end;
 }
 
-.activity-buttons {
+.activity-buttons, .trip-buttons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;

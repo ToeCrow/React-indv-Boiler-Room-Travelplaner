@@ -12,12 +12,18 @@ const TripForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Skapa ett nytt trip-objekt
-    const newTrip = { place, fromDate, toDate, transport };
-
+  
+    // Skapa ett nytt trip-objekt, inklusive en tom activities-array
+    const newTrip = { 
+      place, 
+      fromDate, 
+      toDate, 
+      transport,
+      activities: [] // Lägg till en tom activities-array här
+    };
+  
     setLoading(true);
-
+  
     // Skicka en POST-förfrågan till API:et
     fetch('http://localhost:3001/trips', {
       method: 'POST',
@@ -35,6 +41,7 @@ const TripForm = () => {
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   };
+  
 
   return (
     <main>

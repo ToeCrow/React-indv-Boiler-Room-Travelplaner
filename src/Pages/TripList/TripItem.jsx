@@ -48,10 +48,10 @@ const TripItem = ({ trips, setTrips }) => {
             onClick={() => handleClickShowActivities(id)} 
             className='trip'
           >
-            <div className='trip-item'><strong>Plats: </strong>{place}</div>
-            <div className='trip-item'><strong>Från Datum: </strong>{fromDate}</div>
-            <div className='trip-item'><strong>Till Datum: </strong>{toDate}</div>
-            <div className='trip-item'><strong>Transport: </strong>{transport}</div>
+            <div className='trip-item'><strong>Plats: </strong><br />{place}</div>
+            <div className='trip-item'><strong>Från Datum: </strong><br />{fromDate}</div>
+            <div className='trip-item'><strong>Till Datum: </strong><br />{toDate}</div>
+            <div className='trip-item'><strong>Transport: </strong><br />{transport}</div>
             <div className='trip-item trip-buttons'>
               <button onClick={(event) => handleClickEdit(event, id)}>Ändra</button>
               <button onClick={(event) => handleClickDelete(event, id)}>Radera</button>

@@ -8,11 +8,13 @@
       "transport": "Flight",
       "activities": [
         {
+          "id": 1,
           "activity": "Hiking",
           "date": "2025-06-02",
           "place": "Montmartre"
         },
         {
+          "id": 2,
           "activity": "Museum Visit",
           "date": "2025-06-03",
           "place": "Louvre Museum"
@@ -27,9 +29,37 @@
       "transport": "Train",
       "activities": [
         {
+          "id": 3,
           "activity": "Concert",
           "date": "2025-04-06",
           "place": "Madison Square Garden"
+        }
+      ]
+    },
+    {
+      "id": "63f1",
+      "place": "Norge",
+      "fromDate": "2025-12-20",
+      "toDate": "2025-12-25",
+      "transport": "Bil",
+      "activities": [
+        {
+          "id": 4,
+          "activity": "Åka upp",
+          "date": "2025-12-20",
+          "place": "från Göteborg"
+        },
+        {
+          "id": 5,
+          "activity": "Åka hem",
+          "date": "2025-12-25",
+          "place": "till Göteborg"
+        },
+        {
+          "activity": "Äta mat",
+          "date": "2025-12-24",
+          "place": "vid bordet",
+          "tripId": "63f1"
         }
       ]
     }
