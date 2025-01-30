@@ -4,6 +4,7 @@ import useFetch from "../../Components/useFetch";
 import LoadingScreen from "../../Components/LoadingScreen/LoadingScreen";
 import ErrorScreen from "../../Components/ErrorScreen/ErrorScreen";
 import './EditActivity.css'
+import { useEffect } from "react";
 
 // Gets the data from API and sets the URL to edit the activity with the ID
 const EditActivity = () => {
@@ -17,7 +18,7 @@ const EditActivity = () => {
   const navigate = useNavigate();
 
   // Fills the form with the data from the API
-  React.useEffect(() => {
+  useEffect(() => {
     if (activity) {
       setFormData({
         activity: activity.activity,
