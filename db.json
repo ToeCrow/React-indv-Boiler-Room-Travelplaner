@@ -1,64 +1,37 @@
 {
-  "activities": [
+  "trips": [
     {
-      "activity": "Hiking2",
-      "date": "2025-03-20",
-      "place": "Rocky Mountain National Park",
-      "id": "1"
+      "id": "1",
+      "place": "Paris",
+      "fromDate": "2025-06-01",
+      "toDate": "2025-06-10",
+      "transport": "Flight",
+      "activities": [
+        {
+          "activity": "Hiking",
+          "date": "2025-06-02",
+          "place": "Montmartre"
+        },
+        {
+          "activity": "Museum Visit",
+          "date": "2025-06-03",
+          "place": "Louvre Museum"
+        }
+      ]
     },
     {
       "id": "2",
-      "activity": "Cooking Class",
-      "date": "2025-04-10",
-      "place": "Culinary Arts Center, New York"
-    },
-    {
-      "id": "3",
-      "activity": "Concert",
-      "date": "2025-05-20",
-      "place": "Madison Square Garden, New York"
-    },
-    {
-      "id": "4",
-      "activity": "Art Exhibition",
-      "date": "2025-06-05",
-      "place": "Louvre Museum, Paris"
-    },
-    {
-      "id": "5",
-      "activity": "Marathon",
-      "date": "2025-07-01",
-      "place": "Boston, Massachusetts"
-    },
-    {
-      "activity": "First activity",
-      "date": "2025-01-27",
-      "place": "kiruna",
-      "id": "3007"
-    },
-    {
-      "id": "ae18",
-      "activity": "Third activity",
-      "date": "2025-03-21",
-      "place": "In my list"
-    },
-    {
-      "id": "2262",
-      "activity": "sdh§",
-      "date": "2025-11-12",
-      "place": "shrwj"
-    },
-    {
-      "activity": "eth",
-      "date": "2025-05-01",
-      "place": "sdgh",
-      "id": "4c74"
-    },
-    {
-      "id": "7146",
-      "activity": "sdfghw",
-      "date": "2022-01-11",
-      "place": "adfh"
+      "place": "New York",
+      "fromDate": "2025-04-05",
+      "toDate": "2025-04-12",
+      "transport": "Train",
+      "activities": [
+        {
+          "activity": "Concert",
+          "date": "2025-04-06",
+          "place": "Madison Square Garden"
+        }
+      ]
     }
   ]
 }

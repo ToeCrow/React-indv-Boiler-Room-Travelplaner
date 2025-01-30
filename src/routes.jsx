@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       { index: true, element: <TripList /> }, // Default route
       { path: "add-trip", element: <TripForm /> },
       { path: "edit-trip/:id", element: <EditTrip /> },
-      { path: "activity-list", element: <ActivityList /> },
+      { path: "activity-list/:id", element: <ActivityList /> },
       { path: "add-activity", element: <ActivityForm /> },
       { path: "edit-activity/:id", element: <EditActivity /> },
       { path: "exotictravels", element: <ExoticTravels /> },

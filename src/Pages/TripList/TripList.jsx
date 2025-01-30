@@ -20,7 +20,7 @@ const TripList = () => {
 
   const handleClickAdd = () => {
     navigate('/add-trip'); // Navigera till en ny resa form
-  };
+  };  
 
   return (
     <main>
@@ -32,7 +32,7 @@ const TripList = () => {
         </div>
       </div>
       
-      {/* {error && <ErrorScreen statusCode={statusCode} message={error} />} */}
+      {error && <ErrorScreen statusCode={statusCode} message={error} />}
       {loading && <LoadingScreen />}
       {updatedTrips && <TripItem trips={updatedTrips} setTrips={setUpdatedTrips} />}
     </main>

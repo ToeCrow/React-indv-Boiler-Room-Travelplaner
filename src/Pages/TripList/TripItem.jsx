@@ -1,24 +1,36 @@
 import React from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const TripItem = ({ trips, setTrips }) => {
-  const handleClickEdit = (id) => {
-    // Redirigera användaren till TripForm med rätt id för redigering
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  if (!trips || trips.length === 0) {
+    return <p>Inga resor tillgängliga.</p>;
+  }
+
+  const handleClickEdit = (event, id) => {
+    event.stopPropagation();
     navigate(`/edit-trip/${id}`);
   };
 
-  const handleClickDelete = async (id) => {
+  const handleClickShowActivities = (id) => {
+    navigate(`/activity-list/${id}`);
+  };
+
+  const handleClickDelete = async (event, id) => {
+    event.stopPropagation();
     try {
       const response = await fetch(`http://localhost:3001/trips/${id}`, {
         method: 'DELETE',
       });
-  
+
       const responseText = await response.text();
     
       if (!response.ok) {
         throw new Error(`Failed to delete trip: ${response.status} - ${responseText}`);
       }
 
-      // Ta bort resan från listan utan att hämta om data
       setTrips(prevTrips => prevTrips.filter(trip => trip.id !== id));
       alert('Resan har raderats.');
     } catch (error) {
@@ -31,20 +43,24 @@ const TripItem = ({ trips, setTrips }) => {
     <section>
       <ul>
         {trips.map(({ id, place, fromDate, toDate, transport }) => (
-          <li className='trip' key={id}>
+          <li 
+            key={id} 
+            onClick={() => handleClickShowActivities(id)} 
+            className='trip'
+          >
             <div className='trip-item'><strong>Plats: </strong>{place}</div>
             <div className='trip-item'><strong>Från Datum: </strong>{fromDate}</div>
             <div className='trip-item'><strong>Till Datum: </strong>{toDate}</div>
             <div className='trip-item'><strong>Transport: </strong>{transport}</div>
             <div className='trip-item trip-buttons'>
-              <button onClick={() => handleClickEdit(id)}>Ändra</button>
-              <button onClick={() => handleClickDelete(id)}>Radera</button>
+              <button onClick={(event) => handleClickEdit(event, id)}>Ändra</button>
+              <button onClick={(event) => handleClickDelete(event, id)}>Radera</button>
             </div>
           </li>
         ))}
       </ul>
     </section>
   );
-}
+};
 
 export default TripItem;
