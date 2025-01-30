@@ -11,7 +11,10 @@ const Header = () => {
             <NavLink to="/">Hem</NavLink> {/* Länk till aktivitetslistan */}
           </li>
           <li>
-            <NavLink to="/add-activity">Lägg till aktivitet</NavLink> {/* Länk till aktivitetsformuläret */}
+            <NavLink to="/exotictravels">Ovanliga resor</NavLink>
+          </li>
+          <li>
+            <NavLink to="/about">Om oss</NavLink>
           </li>
         </ul>
       </nav>
