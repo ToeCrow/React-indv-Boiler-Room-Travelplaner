@@ -28,3 +28,11 @@ button.disabled-button:hover + .hover-message {
   margin-top: 4px; /* Litet avstånd mellan knapp och meddelande */
   white-space: nowrap; /* Förhindra radbrytning för långt meddelande */
 }
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  position: absolute; 
+  margin-top: 4px; 
+  white-space: nowrap;
+}
