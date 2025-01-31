@@ -6,10 +6,9 @@ import useFetch from '../../Components/useFetch';
 const ActivityForm = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  
-  // Hämta specifik resa
+
   const { data: trip, loading, error } = useFetch(`http://localhost:3001/trips/${id}`);
-  
+
   const [activity, setActivity] = useState('');
   const [date, setDate] = useState('');
   const [place, setPlace] = useState('');
@@ -26,19 +25,20 @@ const ActivityForm = () => {
     }
   }, [date, trip]);
 
+  const isFormInvalid = !activity || !date || !place || !!dateError;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
   
     if (!trip || dateError) return;
 
-    // Generera ett unikt activityId
     const highestId = trip.activities && trip.activities.length > 0 
       ? Math.max(...trip.activities.map(a => a.id || 0)) 
       : 0;
     const newActivityId = highestId + 1;
 
     const newActivity = { 
-      id: newActivityId, // Nytt unikt id för aktiviteten
+      id: newActivityId,
       activity, 
       date, 
       place, 
@@ -48,12 +48,11 @@ const ActivityForm = () => {
     setSaving(true);
   
     try {
-      // Skicka en PATCH-begäran för att lägga till en aktivitet till resan
       const response = await fetch(`http://localhost:3001/trips/${trip.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
-          activities: [...(trip.activities || []), newActivity] // Se till att aktiviteter finns
+          activities: [...(trip.activities || []), newActivity]
         }),
       });
   
@@ -80,7 +79,8 @@ const ActivityForm = () => {
         <label>Aktivitet</label>
         <input 
           type="text" 
-          required 
+          required
+          autoFocus
           value={activity} 
           onChange={(e) => setActivity(e.target.value)} 
         />
@@ -103,11 +103,21 @@ const ActivityForm = () => {
         />
 
         <div className="button-wrapper">
-          <button type="submit" disabled={saving || !!dateError}>
+          <button 
+            type="submit" 
+            disabled={isFormInvalid || saving}
+            className={isFormInvalid ? 'disabled-button' : ''}
+          >
             {saving ? 'Lägger till...' : 'Lägg till aktivitet'}
           </button>
-          <button type="button" onClick={() => navigate(`/activity-list/${id}`)}>Avbryt</button>
+          {isFormInvalid && (
+            <p className="hover-message">
+              Du måste fylla i alla fält innan du kan skicka formuläret.
+            </p>
+          )}
         </div>
+
+        <button type="button" onClick={() => navigate(`/activity-list/${id}`)}>Avbryt</button>
       </form>
     </main>
   );
