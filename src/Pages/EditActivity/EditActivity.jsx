@@ -1,124 +1,91 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
-import useFetch from "../../Components/useFetch";
-import LoadingScreen from "../../Components/LoadingScreen/LoadingScreen";
-import ErrorScreen from "../../Components/ErrorScreen/ErrorScreen";
-import './EditActivity.css'
-import { useEffect } from "react";
 
-// Gets the data from API and sets the URL to edit the activity with the ID
 const EditActivity = () => {
-  const { tripId, id } = useParams();
-  const { data: activity, error, loading } = useFetch(`http://localhost:3001/trips/${tripId}/activities/${id}`);
-
-  const [formData, setFormData] = useState({
-    activity: '',
-    date: '',
-    place: ''
-  });
+  const { tripId, activityId } = useParams();
   const navigate = useNavigate();
+  const [activity, setActivity] = useState({ activity: '', date: '', place: '' });
 
-  // Fills the form with the data from the API
+  // Hämta aktuell aktivitet vid mount
   useEffect(() => {
-    if (activity) {
-      setFormData({
-        activity: activity.activity,
-        date: activity.date,
-        place: activity.place
-      });
-    }
-  }, [activity]);
+    const fetchActivity = async () => {
+      const tripResponse = await fetch(`http://localhost:3001/trips/${tripId}`);
+      const tripData = await tripResponse.json();
 
+      if (!tripResponse.ok) {
+        console.error("Error fetching trip data");
+        return;
+      }
+
+      // Hitta rätt aktivitet i tripens activities-array
+      const currentActivity = tripData.activities.find(act => act.id === parseInt(activityId));
+
+      if (currentActivity) {
+        setActivity(currentActivity);
+      } else {
+        console.error("Activity not found!");
+      }
+    };
+
+    fetchActivity();
+  }, [tripId, activityId]);
+
+  // Hantera input-förändringar
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
-    }));
+    setActivity({ ...activity, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  // Hantera uppdatering av aktivitet
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    fetch(`http://localhost:3001/activities/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to update activity');
-        }
-        navigate('/');
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while updating the activity');
+    try {
+      const tripResponse = await fetch(`http://localhost:3001/trips/${tripId}`);
+      const tripData = await tripResponse.json();
+  
+      if (!tripResponse.ok) {
+        throw new Error("Failed to fetch trip");
+      }
+  
+      const updatedActivities = tripData.activities.map(act =>
+        act.id === parseInt(activityId) ? activity : act
+      );
+  
+      const updatedTrip = { ...tripData, activities: updatedActivities };
+  
+      const updateResponse = await fetch(`http://localhost:3001/trips/${tripId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedTrip),
       });
+  
+      if (!updateResponse.ok) {
+        throw new Error("Failed to update activity");
+      }
+  
+      
+      navigate(`/activity-list/${tripId}`);
+  
+    } catch (error) {
+      console.error("Error updating activity:", error);
+    }
   };
-
-  // Kontrollera om några fält är tomma
-  const isFormInvalid = !formData.activity || !formData.date || !formData.place;
+  
 
   return (
-    <div id="edit-activity">
-      {loading && <LoadingScreen />}
-      {error && <ErrorScreen message={error} />}
-      {!loading && !error && (
-       <form onSubmit={handleSubmit}>
-       <h2>Ändra aktivitet</h2>
-       <label>
-         Aktivitet:
-         <input
-           type="text"
-           name="activity"
-           value={formData.activity}
-           onChange={handleChange}
-         />
-       </label>
-       <br />
-       <label>
-         Datum:
-         <input
-           type="date"
-           name="date"
-           value={formData.date}
-           onChange={handleChange}
-         />
-       </label>
-       <br />
-       <label>
-         Plats:
-         <input
-           type="text"
-           name="place"
-           value={formData.place}
-           onChange={handleChange}
-         />
-       </label>
-       <br />
-       {/* Knappen */}
-       <button
-         type="submit"
-         disabled={isFormInvalid}
-         className={isFormInvalid ? 'disabled-button' : ''}
-       >
-         Spara ändringar
-       </button>
-     
-       {/* Meddelandet */}
-       {isFormInvalid && (
-         <p className="hover-message">
-           Du måste fylla i alla fält innan du kan skicka formuläret.
-         </p>
-       )}
-     
-       <button type="button" onClick={() => navigate('/')}>Avbryt</button>
-     </form>
-     
-      )}
-    </div>
+    <form onSubmit={handleSubmit}>
+      <h2>Redigera Aktivitet</h2>
+      <label>Aktivitet:</label>
+      <input type="text" name="activity" value={activity.activity} onChange={handleChange} required />
+
+      <label>Datum:</label>
+      <input type="date" name="date" value={activity.date} onChange={handleChange} required />
+
+      <label>Plats:</label>
+      <input type="text" name="place" value={activity.place} onChange={handleChange} required />
+
+      <button type="submit">Spara ändringar</button>
+      <button type="button" onClick={() => navigate(`/trip/${tripId}`)}>Avbryt</button>
+    </form>
   );
 };
 

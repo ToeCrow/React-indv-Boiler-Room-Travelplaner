@@ -1,27 +1,11 @@
 {
   "trips": [
     {
-      "id": "1",
       "place": "Paris",
       "fromDate": "2025-06-01",
       "toDate": "2025-06-10",
       "transport": "Flight",
-      "activities": [
-        {
-          "id": 1,
-          "tripId": "1",
-          "activity": "Hiking",
-          "date": "2025-06-02",
-          "place": "Montmartre"
-        },
-        {
-          "id": 2,
-          "tripId": "1",
-          "activity": "Museum Visit",
-          "date": "2025-06-03",
-          "place": "Louvre Museum"
-        }
-      ]
+      "id": "1"
     },
     {
       "id": "2",
@@ -76,10 +60,10 @@
         },
         {
           "id": 8,
-          "tripId": "63f1",
-          "activity": "sdg",
+          "activity": "Test",
           "date": "2025-12-22",
-          "place": "sdf"
+          "place": "för Edit, kanske?",
+          "tripId": "63f1"
         }
       ]
     }
@@ -147,10 +131,26 @@
       "introduction": "Svalbard is one of the northernmost inhabited places on Earth, a Norwegian archipelago in the Arctic...",
       "imageLink": "/assets/Svalbard.jpg",
       "thumbnail": "/assets/SvalbardSmall.jpg",
-      "attractions": ["Ice caves and glacier hikes", "Dog sledding tours", "Pyramiden", "Polar research"],
-      "foodAndDrink": ["Huset restaurant", "Fruene cafe", "Svalbard Brewery"],
-      "accommodation": ["Svalbard Hotel Polfareren", "Coal Miners’ Cabins", "Basecamp Hotel"],
-      "personalTips": ["Avoid moving outside without guide", "Experience the midnight sun"],
+      "attractions": [
+        "Ice caves and glacier hikes",
+        "Dog sledding tours",
+        "Pyramiden",
+        "Polar research"
+      ],
+      "foodAndDrink": [
+        "Huset restaurant",
+        "Fruene cafe",
+        "Svalbard Brewery"
+      ],
+      "accommodation": [
+        "Svalbard Hotel Polfareren",
+        "Coal Miners’ Cabins",
+        "Basecamp Hotel"
+      ],
+      "personalTips": [
+        "Avoid moving outside without guide",
+        "Experience the midnight sun"
+      ],
       "travelConditions": "No visa required for EU citizens."
     },
     {
@@ -158,10 +158,26 @@
       "introduction": "The Comoros, an island nation in the Indian Ocean...",
       "imageLink": "/assets/Comoros.jpg",
       "thumbnail": "/assets/ComorosSmall.jpg",
-      "attractions": ["Mount Karthala", "Chomoni Beach", "Moroni", "Mitsamiouli"],
-      "foodAndDrink": ["Langouste à la vanille", "M’tsolola", "Laka Lodge"],
-      "accommodation": ["Golden Tulip", "Laka Lodge", "Ecovillage de N’gazidja"],
-      "personalTips": ["Take a guided tour", "Visit Mohéli"],
+      "attractions": [
+        "Mount Karthala",
+        "Chomoni Beach",
+        "Moroni",
+        "Mitsamiouli"
+      ],
+      "foodAndDrink": [
+        "Langouste à la vanille",
+        "M’tsolola",
+        "Laka Lodge"
+      ],
+      "accommodation": [
+        "Golden Tulip",
+        "Laka Lodge",
+        "Ecovillage de N’gazidja"
+      ],
+      "personalTips": [
+        "Take a guided tour",
+        "Visit Mohéli"
+      ],
       "travelConditions": "Visa required, vaccinations recommended."
     }
   ]
