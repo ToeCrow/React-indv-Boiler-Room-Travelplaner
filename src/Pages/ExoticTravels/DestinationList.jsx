@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './DestinationList.css';
-// import Socotra from "../../assets/Socotra.jpg"; 
-// import SocotraSmall from '../../assets/SocotraSmall.jpg';
-// import Minsk from '../../assets/Minsk.jpg';
-// import MinskSmall from '../../assets/MinskSmall.jpg';
-// import Comoros from '../../assets/Comoros.jpg';
-// import ComorosSmall from '../../assets/ComorosSmall.jpg';
-// import Svalbard from '../../assets/Svalbard.jpg';
-// import SvalbardSmall from '../../assets/SvalbardSmall.jpg';
 import LazyImage from '../../Components/LazyImage/LazyImage';
+import TravelList from './TravelList';
 
 
 const DestinationDetails = ({ destination }) => {
@@ -22,38 +15,10 @@ const DestinationDetails = ({ destination }) => {
         altText={destination.name}
         className="destination-image" />  
       <section id="travel-info">
-        <div className='travel-list'>
-          <h3>Attractions</h3>
-          <ul>
-            {destination.attractions.map((attraction, index) => (
-              <li key={index}>{attraction}</li>
-            ))}
-          </ul>
-        </div>
-        <div className='travel-list'>
-          <h3>Food and Drink</h3>
-          <ul>
-            {destination.foodAndDrink.map((food, index) => (
-              <li key={index}>{food}</li>
-            ))}
-          </ul>
-        </div>
-        <div className='travel-list'>
-          <h3>Accommodation</h3>
-          <ul>
-            {destination.accommodation.map((accommodation, index) => (
-              <li key={index}>{accommodation}</li>
-            ))}
-          </ul>
-        </div>
-        <div className='travel-list'>
-          <h3>Personal Tips</h3>
-          <ul>
-            {destination.personalTips.map((tip, index) => (
-              <li key={index}>{tip}</li>
-            ))}
-          </ul>
-        </div>
+      <TravelList title="Attractions" items={destination.attractions} />
+        <TravelList title="Food and Drink" items={destination.foodAndDrink} />
+        <TravelList title="Accommodation" items={destination.accommodation} />
+        <TravelList title="Personal Tips" items={destination.personalTips} />
       </section>
       <h3>Travel Conditions</h3>
       <p>{destination.travelConditions}</p>
@@ -70,8 +35,10 @@ const DestinationList = () => {
     fetch('http://localhost:3001/destinations')
       .then((response) => response.json())
       .then((data) => {
-        console.log("Fetched data:", data); // Kolla att bilderna laddas korrekt
         setDestinations(data);
+        if (data.length > 0) {
+          setSelectedDestination(data[0]); // 🚀 Välj första destinationen direkt
+        }
       })
       .catch((error) => console.error("Error fetching destinations:", error));
   }, []);
