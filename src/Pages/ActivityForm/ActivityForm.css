@@ -12,6 +12,7 @@ article, #activity-form {
 .button-wrapper {
   position: relative; /* För att hantera absolut positionering för barn */
   display: inline-block; /* Håller knappar och meddelande i samma kontext */
+  width: fit-content;
 }
 
 button.disabled-button:hover + .hover-message {
@@ -22,11 +23,11 @@ button.disabled-button:hover + .hover-message {
   display: none; /* Dölj meddelandet som standard */
   color: red;
   font-size: 0.9rem;
-  position: absolute; /* Placera det absolut relativt till .button-wrapper */
-  top: 100%; /* Placera det precis under knappen */
-  /* left: -450px;  */
-  margin-top: 154px; /* Litet avstånd mellan knapp och meddelande */
-  white-space: nowrap; /* Förhindra radbrytning för långt meddelande */
+  position: absolute;
+  top: 155%;
+  left: -411px;
+  margin-top: 4px;
+  white-space: nowrap;/
 }
 
 .error-message {

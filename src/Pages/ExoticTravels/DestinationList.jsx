@@ -37,7 +37,7 @@ const DestinationList = () => {
       .then((data) => {
         setDestinations(data);
         if (data.length > 0) {
-          setSelectedDestination(data[0]); // 🚀 Välj första destinationen direkt
+          setSelectedDestination(data[0]); 
         }
       })
       .catch((error) => console.error("Error fetching destinations:", error));
