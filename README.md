@@ -1,108 +1,85 @@
-# React-indv-Boiler-Room-Travelplaner
+# React Boiler Room Travel Planner
 
-En reseplaneringsapplikation byggd med React och Vite.
+## Projektbeskrivning
+Detta är en resplaneringsapplikation byggd med React, där användare kan skapa resor och lägga till aktiviteter inom varje resa. Applikationen använder `db.json` som en lokal databas via `json-server` för att hantera resor och aktiviteter.
 
-## Innehållsförteckning
+## Funktionalitet
+### **Resor (Trips)**
+- Användare kan skapa, redigera och ta bort resor.
+- Resorna listas i `TripList`, där varje resa visas som ett `TripItem`.
+- Varje resa kan innehålla flera aktiviteter.
 
-- [Introduktion](#introduktion)
-- [Funktioner](#funktioner)
-- [Installation](#installation)
-- [Användning](#användning)
-- [Projektstruktur](#projektstruktur)
-- [Teknologier](#teknologier)
-- [Bidra](#bidra)
-- [Licens](#licens)
+### **Aktiviteter (Activities)**
+- Varje resa kan ha flera aktiviteter som listas i `ActivityList`.
+- Aktiviteter sorteras efter datum.
+- Aktiviteter kan redigeras och tas bort utan att påverka andra resor.
 
-## Introduktion
+## Senaste uppdateringar
+### **1. Förbättrad TripList-layout**
+- `TripList` har nu samma layout som `ActivityList`, där `TripItem` mappar ut alla resor.
+- Separata sidor används för resor och aktiviteter.
 
-Detta projekt är en reseplanerare som hjälper användare att planera sina resor effektivt. Applikationen är byggd med React och Vite för snabb utveckling och prestanda.
+### **2. Uppdaterad ActivityItem med Edit och Delete**
+- `ActivityItem` har förbättrad `handleClickEdit` och `handleClickDelete`.
+- Uppdateringar sker korrekt i `db.json` och UI uppdateras dynamiskt.
+- Fix för DELETE: Rätt URL används för att ta bort en aktivitet inuti en resa.
 
-## Funktioner
+### **3. Fix för EditActivity och navigering**
+- `EditActivity` fyller nu korrekt i data från `db.json`.
+- Uppdateringar sker genom att hämta hela resan, uppdatera `activities`, och sedan skicka en PUT-request.
+- Navigeringen tillbaka till `activity-list/:id` fungerar nu korrekt efter redigering.
 
-- Skapa och hantera reseplaner
+## Installation och Start
+### **1. Klona projektet**
+```sh
+git clone https://github.com/ToeCrow/React-indv-Boiler-Room-Travelplaner.git
+cd React-indv-Boiler-Room-Travelplaner
+```
 
+### **2. Installera beroenden**
+```sh
+npm install
+```
 
-## Installation
+### **3. Starta json-server**
+```sh
+npx json-server --watch db.json --port 3001
+```
 
-Följ dessa steg för att köra projektet lokalt:
-
-1. Klona repositoriet:
-
-  
-   git clone https://github.com/ToeCrow/React-indv-Boiler-Room-Travelplaner.git
-  
-
-2. Navigera till projektets katalog:
-
-  
-   cd React-indv-Boiler-Room-Travelplaner
-  
-
-3. Installera beroenden:
-
-   npm install
-  
-
-4. Starta utvecklingsservern:
-
-  
-   npm run dev
-
-
-Applikationen bör nu vara tillgänglig på `http://localhost:3000`.
+### **4. Starta React-applikationen**
+```sh
+npm run dev
+```
 
 ## Användning
+1. Gå till `http://localhost:5173` för att använda applikationen.
+2. Skapa en ny resa via `TripForm`.
+3. Lägg till aktiviteter i en resa.
+4. Redigera eller ta bort aktiviteter.
+5. Se till att ändringar sparas i `db.json`.
 
-Efter att ha startat applikationen kan du:
-
-- Lägga till destinationer och aktiviteter.
-
-## Projektstruktur
-
-Projektet är strukturerat enligt följande:
-
+## Filstruktur
 ```
-React-indv-Boiler-Room-Travelplaner/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── App.jsx
-│   └── main.jsx
-├── .gitignore
-├── package.json
-├── README.md
-└── vite.config.js
+/src
+  /Components
+  /Pages
+    /ActivityList
+    /ActivityForm
+    /EditActivity
+    /TripList
+    /TripForm
+    /EditTrip
+  App.js
+  main.jsx
+  router.js
+/db.json
 ```
 
-- **public/**: Innehåller statiska filer.
-- **src/**: Innehåller källkoden för applikationen.
-  - **components/**: Återanvändbara React-komponenter.
-  - **pages/**: Sidor i applikationen.
-- **App.jsx**: Huvudkomponenten för applikationen.
-- **main.jsx**: Ingångspunkten för React.
+## Framtida förbättringar
+- Implementera en backend för att hantera resor och aktiviteter mer robust.
+- Lägg till autentisering för att hantera användarspecifika resor.
+- Förbättra UI-design och användarupplevelse.
 
-## Teknologier
-
-- [React](https://reactjs.org/): Ett JavaScript-bibliotek för att bygga användargränssnitt.
-- [Vite](https://vitejs.dev/): En snabb byggverktyg för modern webbutveckling.
-- [React Router](https://reactrouter.com/): Hantering av routing i React-applikationer.
-- [json-server](https://json-server.dev/): local lagring som beter sig som en server, för att träna på anrop. Instält på port 3001.
-
-
-## Bidra
-
-Bidrag är välkomna! För att bidra:
-
-1. Forka repositoriet.
-2. Skapa en ny branch: `git checkout -b feature/ny-funktion`.
-3. Gör dina ändringar.
-4. Commit dina ändringar: `git commit -m 'Lägg till ny funktion'`.
-5. Push till branchen: `git push origin feature/ny-funktion`.
-6. Skicka en Pull Request.
-
-## Licens
-
-Detta projekt är licensierat under MIT-licensen. Se [LICENSE](https://github.com/aws/mit-0) för mer information.
+---
+Senast uppdaterad: **Januari 2025**
 
