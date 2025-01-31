@@ -29,11 +29,16 @@ const LazyImage = ({ smallSrc, largeSrc, altText }) => {
 
   return (
     <img
-      ref={imgRef}
-      src={isIntersecting ? largeSrc : smallSrc} // Om bilden är i vyn, använd stor bild
-      alt={altText}
-      loading="lazy" // Ladda när bilden är synlig i vyn
-    />
+  ref={imgRef}
+  src={isIntersecting ? largeSrc : smallSrc}
+  alt={altText}
+  style={{
+    width: isIntersecting ? "100%" : "80%",
+    opacity: isIntersecting ? 1 : 0.6,
+    transition: "all 0.3s ease-in-out"
+  }}
+/>
+
   );
 };
 
