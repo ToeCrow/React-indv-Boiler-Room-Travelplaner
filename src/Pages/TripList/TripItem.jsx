@@ -42,7 +42,7 @@ const TripItem = ({ trips, setTrips }) => {
   return (
     <section>
       <ul>
-        {trips.map(({ id, place, fromDate, toDate, transport }) => (
+        {trips.map(({ id, place, fromDate, toDate, transport, activities }) => (
           <li 
             key={id} 
             onClick={() => handleClickShowActivities(id)} 
@@ -52,6 +52,12 @@ const TripItem = ({ trips, setTrips }) => {
             <div className='trip-item'><strong>Från Datum: </strong><br />{fromDate}</div>
             <div className='trip-item'><strong>Till Datum: </strong><br />{toDate}</div>
             <div className='trip-item'><strong>Transport: </strong><br />{transport}</div>
+            
+            {/* Nytt fält som visar antal aktiviteter */}
+            <div className='trip-item'>
+              <strong>Antal aktiviteter: </strong><br />{activities ? activities.length : 0}
+            </div>
+            
             <div className='trip-item trip-buttons'>
               <button onClick={(event) => handleClickEdit(event, id)}>Ändra</button>
               <button onClick={(event) => handleClickDelete(event, id)}>Radera</button>
