@@ -5,7 +5,16 @@
       "fromDate": "2025-06-01",
       "toDate": "2025-06-10",
       "transport": "Flight",
-      "id": "1"
+      "id": "1",
+      "activities": [
+        {
+          "id": 1,
+          "activity": "Klättra",
+          "date": "2025-06-02",
+          "place": "Eiffeltornet och alla träd runt",
+          "tripId": "1"
+        }
+      ]
     },
     {
       "id": "2",

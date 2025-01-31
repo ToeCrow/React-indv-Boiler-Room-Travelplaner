@@ -106,7 +106,7 @@ const ActivityForm = () => {
           <button type="submit" disabled={saving || !!dateError}>
             {saving ? 'Lägger till...' : 'Lägg till aktivitet'}
           </button>
-          <button type="button" onClick={() => navigate(`/trip/${id}`)}>Avbryt</button>
+          <button type="button" onClick={() => navigate(`/activity-list/${id}`)}>Avbryt</button>
         </div>
       </form>
     </main>

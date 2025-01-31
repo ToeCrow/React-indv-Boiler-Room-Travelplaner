@@ -33,6 +33,7 @@ button.disabled-button:hover + .hover-message {
   color: red;
   font-size: 0.9rem;
   position: absolute; 
+  left: 400px;
   margin-top: 4px; 
   white-space: nowrap;
 }
