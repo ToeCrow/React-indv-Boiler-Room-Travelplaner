@@ -8,6 +8,7 @@ import Comoros from '../../assets/Comoros.jpg';
 import ComorosSmall from '../../assets/ComorosSmall.jpg';
 import Svalbard from '../../assets/Svalbard.jpg';
 import SvalbardSmall from '../../assets/SvalbardSmall.jpg';
+import LazyImage from '../../Components/LazyImage/LazyImage';
 
 // Sample data array (resemål)
 const destinations = [
@@ -15,6 +16,7 @@ const destinations = [
     name: "Socotra, Yemen",
     introduction: "Socotra is a remote island in the Arabian Sea, part of Yemen but isolated from its political turmoil. Known for its otherworldly landscapes and unique biodiversity, it has been dubbed the 'Galápagos of the Indian Ocean.' The island boasts numerous endemic species of flora and fauna, including the iconic Dragon's Blood tree, which cannot be found anywhere else on Earth.",
     imageLink: Socotra,
+    tumbnail: SocotraSmall,
     attractions: [
       "Explore the ancient Dragon's Blood forests",
       "Pristine beaches like Qalansiyah Beach",
@@ -43,6 +45,7 @@ const destinations = [
     name: "Minsk, Belarus",
     introduction: "Minsk, the capital of Belarus, has a fascinating history and has been the center of several empires, from the Russian Empire to the Soviet Union. The city was almost completely destroyed during World War II, resulting in modernist architecture dominating its cityscape. Minsk is a clean, orderly, and green city with wide avenues, parks, and fountains.",
     imageLink: Minsk,
+    tumbnail: MinskSmall,
     attractions: [
       "Belarusian State Museum of the Great Patriotic War",
       "Gorky Park",
@@ -70,6 +73,7 @@ const destinations = [
     name: "Svalbard, Norway",
     introduction: "Svalbard is one of the northernmost inhabited places on Earth, a Norwegian archipelago in the Arctic. Known for its pristine nature, glaciers, and polar bears, Svalbard offers a unique wilderness experience. The archipelago's history is tied to exploration, mining, and scientific research.",
     imageLink: Svalbard,
+    tumbnail: SvalbardSmall,
     attractions: [
       "Ice caves and glacier hikes",
       "Dog sledding tours",
@@ -96,6 +100,7 @@ const destinations = [
     name: "Comoros (Union of the Comoros)",
     introduction: "The Comoros, an island nation in the Indian Ocean between Mozambique and Madagascar, consists of three main islands. This often-overlooked destination has a rich history shaped by African, Arab, and French influences. The Comoros is known for its unspoiled beaches, tropical landscapes, and warm waters.",
     imageLink: Comoros,
+    tumbnail: ComorosSmall,
     attractions: [
       "Mount Karthala (active volcano for hiking)",
       "Chomoni Beach (stunning beach surrounded by volcanic cliffs)",
@@ -126,7 +131,11 @@ const DestinationDetails = ({ destination }) => {
     <div className="destination-details">
       <h2>{destination.name}</h2>
       <p>{destination.introduction}</p>
-      <img src={destination.imageLink} alt={destination.name} className="destination-image" />
+      <LazyImage 
+        smallSrc={destination.thumbnail}
+        largeSrc={destination.imageLink}
+        altText={destination.name}
+        className="destination-image" />  
       <section id="travel-info">
         <div className='travel-list'>
           <h3>Attractions</h3>
