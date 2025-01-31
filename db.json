@@ -9,12 +9,14 @@
       "activities": [
         {
           "id": 1,
+          "tripId": "1",
           "activity": "Hiking",
           "date": "2025-06-02",
           "place": "Montmartre"
         },
         {
           "id": 2,
+          "tripId": "1",
           "activity": "Museum Visit",
           "date": "2025-06-03",
           "place": "Louvre Museum"
@@ -30,6 +32,7 @@
       "activities": [
         {
           "id": 3,
+          "tripId": "2",
           "activity": "Concert",
           "date": "2025-04-06",
           "place": "Madison Square Garden"
@@ -45,21 +48,38 @@
       "activities": [
         {
           "id": 4,
+          "tripId": "63f1",
           "activity": "Åka upp",
           "date": "2025-12-20",
           "place": "från Göteborg"
         },
         {
           "id": 5,
+          "tripId": "63f1",
           "activity": "Åka hem",
           "date": "2025-12-25",
           "place": "till Göteborg"
         },
         {
+          "id": 6,
+          "tripId": "63f1",
           "activity": "Äta mat",
           "date": "2025-12-24",
-          "place": "vid bordet",
-          "tripId": "63f1"
+          "place": "vid bordet"
+        },
+        {
+          "id": 7,
+          "tripId": "63f1",
+          "activity": "Presenter",
+          "date": "2025-12-24",
+          "place": "under granen"
+        },
+        {
+          "id": 8,
+          "tripId": "63f1",
+          "activity": "sdg",
+          "date": "2025-12-22",
+          "place": "sdf"
         }
       ]
     }
@@ -124,57 +144,25 @@
     },
     {
       "name": "Svalbard, Norway",
-      "introduction": "Svalbard is one of the northernmost inhabited places on Earth, a Norwegian archipelago in the Arctic. Known for its pristine nature, glaciers, and polar bears, Svalbard offers a unique wilderness experience. The archipelago's history is tied to exploration, mining, and scientific research.",
+      "introduction": "Svalbard is one of the northernmost inhabited places on Earth, a Norwegian archipelago in the Arctic...",
       "imageLink": "/assets/Svalbard.jpg",
       "thumbnail": "/assets/SvalbardSmall.jpg",
-      "attractions": [
-        "Ice caves and glacier hikes",
-        "Dog sledding tours",
-        "Pyramiden (abandoned Russian mining town)",
-        "Polar research at the Svalbard Museum"
-      ],
-      "foodAndDrink": [
-        "Huset restaurant (Arctic cuisine with whale and seal meat)",
-        "Fruene cafe for local specialties and baked goods",
-        "Svalbard Brewery (northernmost brewery)"
-      ],
-      "accommodation": [
-        "Svalbard Hotel Polfareren (modern and sustainable)",
-        "Coal Miners’ Cabins (simple, charming rooms)",
-        "Basecamp Hotel (ecological, rustic)"
-      ],
-      "personalTips": [
-        "Avoid moving outside Longyearbyen without a local guide due to polar bear risks",
-        "Experience the midnight sun and northern lights during winter"
-      ],
-      "travelConditions": "No visa required for EU citizens, but a valid passport is necessary. Typically, flights go via Oslo and Tromsø, with flights to Longyearbyen. No vaccinations needed, but good travel insurance is recommended."
+      "attractions": ["Ice caves and glacier hikes", "Dog sledding tours", "Pyramiden", "Polar research"],
+      "foodAndDrink": ["Huset restaurant", "Fruene cafe", "Svalbard Brewery"],
+      "accommodation": ["Svalbard Hotel Polfareren", "Coal Miners’ Cabins", "Basecamp Hotel"],
+      "personalTips": ["Avoid moving outside without guide", "Experience the midnight sun"],
+      "travelConditions": "No visa required for EU citizens."
     },
     {
       "name": "Comoros (Union of the Comoros)",
-      "introduction": "The Comoros, an island nation in the Indian Ocean between Mozambique and Madagascar, consists of three main islands. This often-overlooked destination has a rich history shaped by African, Arab, and French influences. The Comoros is known for its unspoiled beaches, tropical landscapes, and warm waters.",
+      "introduction": "The Comoros, an island nation in the Indian Ocean...",
       "imageLink": "/assets/Comoros.jpg",
       "thumbnail": "/assets/ComorosSmall.jpg",
-      "attractions": [
-        "Mount Karthala (active volcano for hiking)",
-        "Chomoni Beach (stunning beach surrounded by volcanic cliffs)",
-        "Moroni (capital city with traditional markets)",
-        "Mitsamiouli (great diving spot with coral reefs)"
-      ],
-      "foodAndDrink": [
-        "Langouste à la vanille (lobster cooked with locally grown vanilla)",
-        "M’tsolola (traditional stew with fish or chicken)",
-        "Laka Lodge restaurant for sustainable and organic meals"
-      ],
-      "accommodation": [
-        "Golden Tulip Grande Comore Moroni Resort & Spa (luxury with ocean view)",
-        "Laka Lodge on Mohéli (eco-lodge with focus on sustainable tourism)",
-        "Ecovillage de N’gazidja (eco-friendly accommodation)"
-      ],
-      "personalTips": [
-        "Take a guided tour through a vanilla or spice plantation",
-        "Mohéli is the most untouched of the islands and a paradise for nature lovers, especially for turtle and dolphin sightings"
-      ],
-      "travelConditions": "Visa required, usually issued on arrival. Vaccinations for Hepatitis A, Typhoid, and Yellow Fever are recommended, along with malaria prophylaxis. Flights to Moroni are available from Nairobi, Madagascar, and other African cities."
+      "attractions": ["Mount Karthala", "Chomoni Beach", "Moroni", "Mitsamiouli"],
+      "foodAndDrink": ["Langouste à la vanille", "M’tsolola", "Laka Lodge"],
+      "accommodation": ["Golden Tulip", "Laka Lodge", "Ecovillage de N’gazidja"],
+      "personalTips": ["Take a guided tour", "Visit Mohéli"],
+      "travelConditions": "Visa required, vaccinations recommended."
     }
   ]
 }

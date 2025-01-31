@@ -18,7 +18,6 @@ const ActivityForm = () => {
 
   useEffect(() => {
     if (trip && date) {
-      // Validera att datumet är inom resans tidsintervall
       if (new Date(date) < new Date(trip.fromDate) || new Date(date) > new Date(trip.toDate)) {
         setDateError(`Datumet måste vara mellan ${trip.fromDate} och ${trip.toDate}`);
       } else {
@@ -31,12 +30,19 @@ const ActivityForm = () => {
     e.preventDefault();
   
     if (!trip || dateError) return;
-  
+
+    // Generera ett unikt activityId
+    const highestId = trip.activities && trip.activities.length > 0 
+      ? Math.max(...trip.activities.map(a => a.id || 0)) 
+      : 0;
+    const newActivityId = highestId + 1;
+
     const newActivity = { 
+      id: newActivityId, // Nytt unikt id för aktiviteten
       activity, 
       date, 
       place, 
-      tripId: trip.id // Detta kommer att länka aktiviteten till rätt resa
+      tripId: trip.id 
     };
   
     setSaving(true);
@@ -47,7 +53,7 @@ const ActivityForm = () => {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
-          activities: [...trip.activities, newActivity]
+          activities: [...(trip.activities || []), newActivity] // Se till att aktiviteter finns
         }),
       });
   
@@ -63,8 +69,6 @@ const ActivityForm = () => {
     }
   };
   
-  
-
   if (loading) return <p>Laddar...</p>;
   if (error) return <p>Ett fel inträffade: {error}</p>;
   if (!trip) return <p>Resa hittades inte.</p>;

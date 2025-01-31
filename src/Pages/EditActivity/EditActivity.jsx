@@ -8,8 +8,9 @@ import { useEffect } from "react";
 
 // Gets the data from API and sets the URL to edit the activity with the ID
 const EditActivity = () => {
-  const { id } = useParams();
-  const { data: activity, error, loading } = useFetch(`http://localhost:3001/activities/${id}`);
+  const { tripId, id } = useParams();
+  const { data: activity, error, loading } = useFetch(`http://localhost:3001/trips/${tripId}/activities/${id}`);
+
   const [formData, setFormData] = useState({
     activity: '',
     date: '',

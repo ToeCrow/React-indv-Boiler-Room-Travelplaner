@@ -14,20 +14,21 @@ import EditTrip from "./Pages/EditTrip/EditTrip";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />, // Välj AppLayout för huvudkomponenten
+    element: <App />,
     children: [
-      { index: true, element: <TripList /> }, // Default route
+      { index: true, element: <TripList /> },
       { path: "add-trip", element: <TripForm /> },
       { path: "edit-trip/:id", element: <EditTrip /> },
       { path: "activity-list/:id", element: <ActivityList /> },
-      { path: "/trip/:id/add-activity", element: <ActivityForm /> },
-      { path: "edit-activity/:id", element: <EditActivity /> },
+      { path: "trip/:id/add-activity", element: <ActivityForm /> },
+      { path: "trip/:tripId/edit-activity/:activityId", element: <EditActivity /> }, 
       { path: "exotictravels", element: <ExoticTravels /> },
       { path: "about", element: <About /> },
       { path: "*", element: <NotFound /> },
     ],
   },
 ]);
+
 
 // Exportera router-konfigurationen
 export default router;
