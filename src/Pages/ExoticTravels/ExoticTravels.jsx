@@ -1,8 +1,9 @@
 import React from 'react'
+import DestinationList from './DestinationList'
 
 const ExoticTravels = () => {
   return (
-    <div>ExoticTravels</div>
+    <DestinationList />
   )
 }
 

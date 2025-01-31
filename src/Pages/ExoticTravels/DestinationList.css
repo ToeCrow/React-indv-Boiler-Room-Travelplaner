@@ -1,0 +1,63 @@
+main.destination-menu {
+  padding: 0;
+}
+
+.destination-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.destination-list ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  list-style: none;
+  padding: 2px;
+  gap: 20px;
+}
+
+.destination-list li {
+  background-color: #0079B4;
+  color: #f0f0f0;
+}
+
+#travel-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.travel-list {
+  display: flex;
+  flex-direction: column;
+  width: 42%;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+}
+
+.travel-list li {
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+.destination-menu li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.destination-menu li:hover {
+  background-color: #f0f0f0;
+  color: #0079B4;
+}
+
+.destination-details img {
+  max-width: 100%;
+  height: auto;
+}
+
