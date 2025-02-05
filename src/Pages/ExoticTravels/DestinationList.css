@@ -6,6 +6,8 @@ main.destination-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+    bottom: 45px;
 }
 
 .destination-list ul {

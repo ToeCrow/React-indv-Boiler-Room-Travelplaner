@@ -75,6 +75,14 @@
           "tripId": "63f1"
         }
       ]
+    },
+    {
+      "id": "3850",
+      "place": "Stockholm",
+      "fromDate": "2025-02-04",
+      "toDate": "2025-02-05",
+      "transport": "Bil",
+      "activities": []
     }
   ],
   "destinations": [
