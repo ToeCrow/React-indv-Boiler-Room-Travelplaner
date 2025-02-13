@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TripItem from './TripItem';
 import LoadingScreen from '../../Components/LoadingScreen/LoadingScreen';
+import LoadingDots from '../../Components/LoadingDots/LoadingDots';
 import ErrorScreen from '../../Components/ErrorScreen/ErrorScreen';
 import useFetch from '../../Components/useFetch';
 import { useNavigate } from 'react-router-dom';
@@ -33,7 +34,7 @@ const TripList = () => {
       </div>
       
       {error && <ErrorScreen statusCode={statusCode} message={error} />}
-      {loading && <LoadingScreen />}
+      {loading && <LoadingDots />}
       {updatedTrips && <TripItem trips={updatedTrips} setTrips={setUpdatedTrips} />}
     </main>
   );
